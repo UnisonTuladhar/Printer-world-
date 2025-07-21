@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <script src="login.js"></script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: beige;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 800px;
+    }
+
+    .login-container{
+      background-color: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px black;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 30px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: rgb(21, 173, 21);
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: darkgreen;
+      font-size: 100%;
+      transform: scale(1.0);
+    }
+
+    .cart{
+      width: 140px;
+      height: 105px;
+    }
+
+  </style>
+</head>
+<body>
+
+    <div class="cart">
+      <img src="hp.png">
+    </div>   
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <li for="username">Username:</li>
+      <input type="text" id="username" name="username" required>
+
+      <li for="password">Password:</li>
+      <input type="password" id="password" name="password" required>
+
+      <button type="button" onclick="validateLogin()">Login</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- META CODE  -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+
+    <!-- EXTERNAL CSS LINKS-->
+    <link rel="stylesheet" href="Style.css">
+
+    
+
+    <!-- INTERNAL CSS  -->
+    <style type="text/css">
+    /* Form Container Div */
+    .form-container{width:45%; background-color:white; text-align:center; margin:20px 26%; padding:30px;}
+    .form-container h3{font-weight: 300; letter-spacing: 1px; margin-top: 5px; margin-bottom: 25px; font-size: 27px; color: #FFD700;}
+    /* Class of Form tag */
+    .reg-form{width: 100%;}
+    /* Input Fields */
+    .input_field{margin-bottom: 15px; display: flex; align-items: center;}
+    /* Labels and Input Fields alignment */
+    .reg-form label{width: 250px; color:#757575; margin-right: 10px; }
+    .reg-form input,
+    .reg-form textarea{width: 100%; outline: none; border: 1px solid #d5dbd9; padding: 8px 10px; border-radius: 3px;}
+    .reg-form textarea{resize: none; height: 150px;}
+    /* Drop down Div */
+    .custom_select{position: relative; width: 100%; height: 37px;}
+    .custom_select select{border: 1px solid #d5dbd9; width: 100%; height: 100%; padding: 8px 10 px; border-radius: 3px; appearance: none; -webkit-appearance:none;}
+    .input_field p{ color: #757575; }
+    /* Checkbox Div */
+    .input_field .check{width: 30px; height: 15px; display: block; cursor: pointer; margin-left: 50px;}
+    /* Submit Button */
+    .reg-button{width: 100%; padding: 8px; border: 0; background: #FFD700; color: #fff; cursor:pointer; border-radius: 3px; outline: none; font-size: 16px; }
+    
+    form {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 15px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0;
+      box-sizing: border-box;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+
+    </style>
+
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <header>
+      <div class="logo">About Us</div>
+ 
+ <nav>
+     <div class="nav-links">
+ <ul>
+         <li><a href="Home.html">Home</a></li>
+         <li><a href="blog.html">Blog Page</a></li>
+         <li><a href="product1.html">Product Page</a></li>
+         <li><a href="research.html">Research</a></li> 
+         <li><a href="hello.html">About Us</a></li>
+         
+     </ul>
+    
+</nav>
+ </div>
+ <!-- login in link -->
+ <div class="login"><li><a href="login.html">Login</a></li></div>
+ </header>
+
+    <!-- BODY  -->
+    <!-- REGISTRATION FORM -->
+    <div class="form-container">
+      <!-- FORM TITLE  -->
+      <h3>Register</h3>
+      <!-- MAIN FORM  -->
+      <form class="reg-form" name="registrationForm" onsubmit="validateForm()">
+        <!-- First Name field  -->
+        <div class="input_field">
+          <label>First Name</label> 
+          <input type="text" name="firstname" class="input">
+        </div>
+        <!-- Second Name field  -->    
+        <div class="input_field">
+          <label>Second Name</label>
+          <input type="text" name="secondname" class="input">
+        </div>
+        <!-- Email Address field  -->
+        <div class="input_field">
+          <label>Email Address</label>
+          <input type="email" name="email" class="input">
+        </div>
+        <!-- Password field  -->
+        <div class="input_field">
+          <label>Password</label>
+          <input type="password" name="password" class="input">
+        </div>
+        <!-- Phone Number field  -->
+        <div class="input_field">
+          <label>Phone Number</label>
+          <input type="tel" name="phonenumber" class="input">
+        </div>
+        <!-- Gender Drop Down Menu field  -->
+        <div class="input_field">
+          <label>Gender</label>
+          <div class="custom_select">
+              <select id="selection">
+                <option name="gender" value="select">Select</option>
+                <option name="gender" value="male">Male</option>
+                <option name="gender" value="female">Female</option>
+              </select>
+          </div>
+        </div>
+        <!-- Address Text Area field  -->
+        <div class="input_field">
+          <label>Address</label>
+          <textarea type="text" name="address" class="textarea"></textarea>
+        </div>
+        <!-- Agreement Checkbox field  -->
+        <div class="input_field">
+          <label class="check">
+            <input type="checkbox" name="agree" id="agreed">
+          </label>
+          <p>Agreed to the terms and conditions.</p>
+        </div>
+        <!-- Submit Button  -->
+        <input type="submit" class="reg-button" value="REGISTER">
+      </form>
+    </div>
+
+    <!-- JS FOR FORM VALIDATION -->
+    <script type="text/javascript">
+      function validateForm() {
+        //assingning var to values from form using form name and input name.
+        var fname = document.forms["registrationForm"]["firstname"].value;
+        var lname = document.forms["registrationForm"]["secondname"].value;
+        var email = document.forms["registrationForm"]["email"].value;
+        var password = document.forms["registrationForm"]["password"].value;
+        var phone = document.forms["registrationForm"]["phonenumber"].value;
+        var gender = document.getElementById('selection').value;
+        var address = document.forms["registrationForm"]["address"].value;
+        var terms = document.getElementById('agreed').checked;
+
+        if (fname == "" || lname == "" || email == "" || password == "" || phone == "" || address == "" ){
+          alert("Empty fields found!! Please fill the form."); // Sends alert if empty fields found
+        }
+        else if (terms == false) {
+          alert("You must agree to the terms and conditions to complete the registration."); 
+        } // Sends alert if agreement is unchecked
+        else if (gender == "select") {
+          alert("Please Select a Gender.");
+        } // Sends alert if value from drop down is not selected
+        else {
+          alert("Registration Done. Thank you for the registration.");
+        }
+      }
+    </script>
+
+        <!-- ABOUT SECTION -->
+    <h1 style="margin: 30px 0; padding-left: 24px;">About us</h1>
+<section class="about-section">
+    
+    
+      <div class="blog">
+      <!-- MEMBER 1 -->
+        <img src="Pon.jpg" alt="Member 1" class="member-image">
+        <h1>Pon Gyalgen Lama</h1>
+        <h4>Contact Number : 9823053837</h4>
+        <h2>About me</h2>
+        <p>Pon is a dedicated and enthusiastic student of computing. He has a strong passion for coding and problem-solving, which he applies to his studies and projects. He has a deep understanding of programming languages such as Python and Java, and is always eager to learn more about new technologies and advancements in the field.</p>
+      <h2> Hobbies about me</h2>
+        <p>Swimming.Playing games etc..</p>
+        <h2>Education</h2>
+        <p>+2 passed. Currently studying Bachelors  in Islington college.</p>
+        <h2>To Contact me </h2>
+        <div class="contact">
+        <a href="https://www.instagram.com/xowiz_/">
+          <img src="instagram.png">
+        </a>
+        <a href="https://www.facebook.com/">
+          <img src="facebook.png">
+        </a>
+      </div>
+      
+     
+    </div>
+
+<!-- MEMBER 2 -->
+    <div class="blog">
+        <img src="unison.png" alt="Member 2" class="member-image">
+        <h1>Unison Raj Tuladhar</h1>
+        <h4>Contact Number : 9803569987</h4>
+        <h2>About me</h2>
+        <p>Unison is a creative and innovative student of IT, who has a strong background in HTML and CSS. He is always exploring new ways to combine his technical and design skills to create unique and eye-catching projects. He has a very creative ideas and the website design idea was also decided by unison.</p>
+        <h2> Hobbies about me</h2>
+        <p>Travelling,Playing football, Playing Video games etc..</p>
+        <h2>Education</h2>
+        <p>+2 passed. Currently studying Bachelors  in Islington college.</p>
+        <h2>To Contact me </h2>
+        <div class="contact">
+        <a href="https://www.instagram.com/unison_tuladhar/">
+          <img src="instagram.png">
+        </a>
+        <a href="https://www.facebook.com/">
+          <img src="facebook.png">
+        </a>
+      </div>
+    </div>
+
+      <!-- MEMBER 3 -->
+    <div class="blog">
+        <img src="Krish.jpg" alt="Member 3" class="member-image">
+        <h1>Krish Shrestha</h1>
+        <h4>Contact Number : 9843038662</h4>
+        <h2>About me</h2>
+        <p> Krish is a highly motivated and enthusiastic student of IT, with a passion for coding and web development. He has a natural talent for problem-solving and is always eager to learn new technologies. He is also the leader of the group. </p>
+      <h2> Hobbies about me</h2>
+        <p>Playing games,Travelling,Riding bikes etc..</p>
+        <h2>Education</h2>
+        <p>+2 passed. Currently studying Bachelors  in Islington college.</p>
+        <h2>To Contact me </h2>
+        <div class="contact">
+        <a href="https://www.instagram.com/krishh_thecoolest/">
+          <img src="instagram.png">
+        </a>
+        <a href="https://www.facebook.com/">
+          <img src="facebook.png">
+        </a>
+      </div>
+  </section>
+
+  <section class="Feedback">
+    <form name="myform" onsubmit="validate()">
+        First Name: <input type="text" name="fname"><br>
+        Last Name: <input type="text" name="lname"><br>
+      
+        <textarea name="message" placeholder="Please give your feedback here." rows="10" cols="50"></textarea><br>
+        <input type="submit" name="submit">
+    </form>
+</body>
+<script type="text/javascript">
+        function validate() 
+        {
+             var fname=document.forms['myform']['fname'].value;
+             var lname=document.forms['myform']['lname'].value;
+             var message=document.forms['myform']['message'].value;
+             if (fname=="" || lname=="" || message=="")
+             {
+                 alert("Empty field found");
+             }
+             else
+             {
+                 alert("Thank you for sending Feedback");
+             }
+        }
+</script>
+</section>
+
+<section class="semifoot">
+  <div class="inside-semifoot">
+      <h2>Printer World</h2>
+      <p>About Printer World</p>
+      <p>Terms and Condition</p>
+      <p>Privacy Policy</p>
+  </div>
+  <div class="inside-semifoot">
+     <h2> Stay Connected</h2>
+     <p>@gmail.com</p>
+     <p>+9800000000</p>
+  </div>
+  <div class="inside-semifoot">
+      <h2>Customer Care</h2>
+      <p>Return and refunds</p>
+      <p>Contact Us</p>
+  </div>
+
+  <div class="inside-semifoot">
+
+  <div class="contact">
+      <h2>Follow us</h2>
+ <a href="https://www.instagram.com/"><img src="instagram.png" alt="instagram" style="border-radius: 10px;"></a>
+ <a href="https://www.facebook.com/"><img src="facebook.png" alt="facebook" style="border-radius: 10px;"></a>
+
+  </div>
+</div>
+</section>
+
+<section class="foot">
+<footer>
+  <p>&copy;Copyright Printer World I 2024</p> 
+  
+</footer>
+
+  </body>
+</html>
